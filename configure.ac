@@ -356,7 +356,7 @@ AC_DEFINE([HAVE_ISATTY], 1, [Define to 1 if you have the 'isatty' function.])
 
 dnl Deal with specific hosts
 case $host_os in
-  *mingw32* )
+  *mingw* )
     LIBS+=' -lws2_32'
     OS_USED="mswindows"
     ;;
@@ -538,7 +538,7 @@ AS_IF([test x"$with_ssl" = xopenssl], [
 
     ssl_found=no
     case $host_os in
-      *mingw32* )
+      *mingw* )
         dnl prefer link to openssl dlls if possible. if not then fallback on static libs. if not then error
 
         AC_CHECK_LIB(eay32, EVP_MD_CTX_init)
